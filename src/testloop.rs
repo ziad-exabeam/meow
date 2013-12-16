@@ -1,5 +1,5 @@
 #[feature(non_ascii_idents)];
-//extern mod rustc;
+extern mod rustc;
 extern mod extra;
 use std::io;
 use std::io::fs;
@@ -117,8 +117,8 @@ fn request_build(args: &[~str]) {
       
       // build
       println("<<<< building tests >>>>");
-      run("/usr/local/bin/rustc",
-      //rustc::main_args(
+      //run("/usr/local/bin/rustc",
+      rustc::main_args(
          [~"-o", test_bin.clone(),
           ~"--test", crate,
           ~"--allow", ~"dead_code",
